@@ -34,7 +34,7 @@ Antes de ejecutar el script, aseg√∫rate de tener lo siguiente instalado en tu m√
 * Si tienes Git instalado, puedes clonar el repositorio utilizando el siguiente comando:
 
   ```bash
-  git clone <[URL del repositorio en GitHub](https://github.com/GisselaJarrin/QA---BP/blob/main/README.md)>
+  git clone https://github.com/GisselaJarrin/QA---BP/blob/main/README.md)
   ```
 
 * Si no tienes Git, puedes descargar los archivos del repositorio en formato **ZIP** y descomprimirlos.
