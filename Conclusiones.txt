@@ -1,2 +1,68 @@
-Conclusiones.txt
-```
+### 🧾 conclusiones.txt
+
+txt
+CONCLUSIONES DEL EJERCICIO DE PRUEBA AUTOMATIZADA E2E - DEMOBLAZE
+
+1. Se logró automatizar exitosamente el flujo completo de compra en el sitio Demoblaze utilizando Cypress como herramienta principal.
+
+2. El flujo incluyó:
+   - Agregar dos productos al carrito
+   - Verificar su presencia en el carrito
+   - Completar el formulario de compra
+   - Validar el mensaje final de confirmación
+
+3. Se presentaron dos desafíos técnicos:
+   - La detección del botón 'Cart' fallaba al usar `cy.contains('Cart')`, por lo que se utilizó su selector por ID: `#cartur`.
+   - El mensaje final no era una ventana `alert`, sino un modal dinámico, lo cual exigió ajustar la forma de validación del mensaje de éxito.
+
+4. El sistema responde correctamente ante los inputs automatizados y el sitio permite realizar compras simuladas sin necesidad de autenticación.
+
+5. Se recomienda siempre validar visualmente los selectores con herramientas de inspección de navegador antes de ejecutarlos en Cypress.
+
+RESULTADO: ✅ Ejercicio completado con éxito.
+`
+
+---
+
+### 📘 instrucciones.txt
+
+txt
+INSTRUCCIONES DEL EJERCICIO DE AUTOMATIZACIÓN
+
+1. Puedes utilizar cualquier framework de automatización. Los recomendados son:
+   - Cypress
+   - Selenium WebDriver
+   - Serenity
+
+2. Al finalizar el ejercicio, debes subir un archivo `.zip` o `.rar` con:
+   - Scripts de automatización
+   - Reportes (si aplica)
+   - Código fuente
+   - Un archivo `readme.txt` o `README.md` con instrucciones
+   - Un archivo `conclusiones.txt` con resultados y hallazgos
+
+3. Debes crear un repositorio público en GitHub con todo el contenido y colocar la URL en los comentarios del ejercicio.
+
+---
+
+🧪 EJERCICIO
+
+Realizar una prueba funcional automatizada (Prueba E2E) de un flujo de compra en la página:
+
+🔗 https://www.demoblaze.com/
+
+El flujo debe incluir:
+
+- Agregar dos productos al carrito
+- Visualizar el carrito
+- Completar el formulario de compra
+- Finalizar la compra
+
+---
+
+📝 Nota: El objetivo es simular la experiencia de usuario completa y validar la integridad del flujo de compra.
+
+
+---
+
+¿Quieres que te empaquete todo en un .zip listo para subir, o solo copiar/pegar en tu proyecto?
