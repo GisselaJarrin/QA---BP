@@ -1,0 +1,32 @@
+
+## ✅ `instrucciones.txt`
+
+```txt
+INSTRUCCIONES - Cómo ejecutar el proyecto
+
+1. Abrir una terminal (CMD, PowerShell o Terminal integrada en VS Code).
+
+2. Ir a la carpeta del proyecto:
+   cd Documents/petstore
+
+3. Instalar las dependencias necesarias:
+   npm install
+
+4. Ejecutar Cypress en modo gráfico:
+   npx cypress open
+
+5. En la ventana de Cypress:
+   - Selecciona "E2E Testing"
+   - Elige un navegador (Chrome recomendado)
+   - Haz clic sobre el archivo "spec-copy-1.cy.js" para ejecutar las pruebas
+
+6. Cypress abrirá un navegador y mostrará los resultados de cada test:
+   - ✔ Crear usuario
+   - ✔ Login correcto
+
+7. Se Verifica en la consola que las respuestas de la API sean exitosas (código 200).
+
+```
+
+---
+
