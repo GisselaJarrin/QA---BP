@@ -1,0 +1,20 @@
+## ✅ `conclusiones.txt`
+
+```txt
+CONCLUSIONES - Proyecto de Pruebas E2E con Cypress
+
+1. Cypress es una herramienta muy práctica para realizar pruebas end-to-end, tanto de interfaces como de APIs.
+
+2. La estructura del proyecto permite realizar pruebas organizadas, modulares y reutilizables.
+
+3. Se puede trabajar fácilmente con APIs REST usando `cy.request()` para validar respuestas de forma rápida.
+
+4. Automatizar pruebas E2E en APIs como Demoblaze permite detectar errores en endpoints clave como el login o registro de usuarios.
+
+5. Cypress también facilita el trabajo en equipo gracias a su interfaz visual, donde se pueden revisar resultados de manera clara.
+
+6. Simular flujos reales de usuario (registro + login) y validar respuestas HTTP con aserciones.
+
+````
+
+---
