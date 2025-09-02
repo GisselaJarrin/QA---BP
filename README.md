@@ -1,88 +1,103 @@
-# QA---BP
-Frameware Selenium WebDriver
-# **README: Instrucciones para Ejecutar el Script de Automatización**
-
-Este archivo contiene las instrucciones para ejecutar el script de prueba de automatización del flujo de compra en **Demoblaze** usando **Python** y **Selenium WebDriver**.
+Proyecto de pruebas E2E con Cypress sobre el flujo de compra en **Demoblaze**:
 
 ---
 
-## **Requisitos Previos**
+```markdown
+# 🧪 Test Automatizado E2E - Flujo de Compra en Demoblaze
 
-Antes de ejecutar el script, asegúrate de tener lo siguiente instalado en tu máquina:
+Este proyecto utiliza **Cypress** para automatizar el flujo completo de compra de productos en la tienda web [Demoblaze](https://www.demoblaze.com/).
 
-1. **Python 3.x**
-   Si aún no tienes Python, puedes descargarlo desde:
-   [https://www.python.org/downloads/](https://www.python.org/downloads/)
+## 📋 Objetivo
 
-2. **Selenium WebDriver**
-   Selenium es necesario para interactuar con el navegador de forma automatizada. Puedes instalar Selenium usando el siguiente comando en tu terminal:
+Automatizar el siguiente flujo:
+
+1. Ingresar a la página de Demoblaze.
+2. Agregar dos productos al carrito.
+3. Visualizar el carrito y confirmar que los productos estén agregados.
+4. Completar el formulario de compra.
+5. Verificar el mensaje de confirmación de compra.
+
+---
+
+## 🛠 Herramientas utilizadas
+
+- [Cypress 12+](https://docs.cypress.io/)
+- Node.js
+- Visual Studio Code (opcional)
+- Sistema operativo: Windows 10
+
+---
+
+## 🧩 Estructura del proyecto
+
+```
+
+📁 cypress/
+└── e2e/
+└── spec-copy-1.cy.js   # Archivo con los casos de prueba
+README.md                    # Este archivo
+package.json                 # Dependencias y configuración de Cypress
+
+````
+
+---
+
+## 🚀 Instalación y ejecución
+
+1. **Clona este repositorio:**
+   ```bash
+   git clone https://github.com/GisselaJarrin/QA---BP/demoblaze-cypress-test.git
+   cd demoblaze-cypress-test
+````
+
+2. **Instala las dependencias:**
 
    ```bash
-   pip install selenium
+   npm install
    ```
 
-3. **WebDriver para tu Navegador (ChromeDriver)**
-   Selenium necesita un controlador para interactuar con el navegador. En este ejemplo, utilizamos **Google Chrome**, por lo que necesitas **ChromeDriver**.
-   Para instalar automáticamente ChromeDriver, utilizamos la biblioteca `webdriver_manager`:
+3. **Ejecuta Cypress:**
 
    ```bash
-   pip install webdriver-manager
+   npx cypress open
    ```
-## **Pasos para Ejecutar el Script**
 
-### 1. **Clonar o Descargar el Proyecto**
-* Si tienes Git instalado, puedes clonar el repositorio utilizando el siguiente comando:
-
-  ```bash
-  git clone https://github.com/GisselaJarrin/QA---BP/blob/main/README.md)
-  ```
-
-* Si no tienes Git, puedes descargar los archivos del repositorio en formato **ZIP** y descomprimirlos.
-
-### 2. **Preparación del Entorno**
-* Asegúrate de tener Python y las dependencias necesarias instaladas. Para instalar las dependencias requeridas, abre una terminal o línea de comandos y navega hasta el directorio del proyecto.
-
-* Ejecuta el siguiente comando para instalar **Selenium** y **WebDriver Manager**:
-
-  ```bash
-  pip install selenium webdriver-manager
-  ```
-
-### 3. **Revisar el Código**
-* Abre el archivo `compra.py` con el editor de código de Visual Studio Code).
-
-* **Código principal**: El script está diseñado para automatizar un flujo de compra en la página web **Demoblaze**. El flujo incluye agregar productos al carrito, rellenar el formulario de compra, y finalizar la compra.
-
-### 4. **Ejecutar el Script**
-* Para ejecutar el script de prueba se abre una terminal o línea de comandos en la carpeta con el archivo `compra.py` y se escribe:
-
-  ```bash
-  python compra.py
-  ```
-
-### 5. **Verificación del Resultado**
-* El script abrirá automáticamente **Google Chrome** (asegúrate de tenerlo instalado).
-* Navegará por la página **Demoblaze**, agregará dos productos al carrito, completará el formulario de compra, y finalizará el proceso.
-* Finalmente, el script buscará el mensaje de confirmación **"Thank you for your purchase!"** y lo imprimirá en la terminal.
-* El navegador se cerrará automáticamente después de unos segundos.
-
-### 6. **Archivos Generados**
-* **test\_compra.py**: El archivo de prueba automatizada.
-* **readme.txt**: Este archivo con las instrucciones de uso.
-* **conclusiones.txt**: (Opcional) Archivo donde puedes colocar los hallazgos y comentarios sobre la ejecución de la prueba.
+   Luego selecciona el archivo `spec-copy-1.cy.js` desde la interfaz gráfica de Cypress.
 
 ---
 
-## **Consideraciones Finales**
-* Si experimentas algún error con la versión de **ChromeDriver**, asegúrate de que **ChromeDriver** sea compatible con la versión de **Google Chrome** que tienes instalada.
-* Si el script no encuentra los elementos correctamente, puedes tener que actualizar los selectores (por ejemplo, `XPath` o `ID`) según los cambios en la página web.
+## ✅ Casos de prueba
+
+| Caso                               | Descripción                                              |
+| ---------------------------------- | -------------------------------------------------------- |
+| `Agrega dos productos al carrito`  | Navega y agrega 2 laptops al carrito                     |
+| `Visualiza el carrito`             | Abre el carrito y verifica que haya al menos 2 productos |
+| `Completa el formulario de compra` | Llena el formulario de orden con datos simulados         |
+| `Finaliza la compra`               | Verifica que el mensaje de confirmación sea visible      |
 
 ---
 
-¡Eso es todo! Si tienes algún problema o pregunta sobre la ejecución del script, no dudes en consultar los logs de errores o contactarme para más ayuda.
+## 🧪 Capturas de prueba (Opcional)
+
+Puedes agregar aquí capturas de pantalla de los tests pasando o del resumen final de Cypress si se requiere evidencia visual.
+
+---
+
+## 📌 Notas importantes
+
+* El botón `Cart` fue accedido por su ID (`#cartur`) ya que `cy.contains('Cart')` fallaba por mayúsculas o timing.
+* El mensaje de confirmación **no** es un `alert`, sino un modal en `.modal-content`, por eso se cambió la forma de verificación.
+* Se recomienda tener conexión a internet ya que el sitio Demoblaze es una demo pública y puede variar en disponibilidad.
+
+---
+
+## ✍️ Autor
+
+**Gissela Jarrín** - *Tester QA Cypress*
 
 ---
 
 
 
-
+¿Deseas también el archivo `conclusiones.txt` para acompañar la entrega?
+```
